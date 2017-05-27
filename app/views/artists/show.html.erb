@@ -7,8 +7,15 @@
       <%= link_to "Add new song", new_song_path, class: "btn btn-primary" %>
       <%= link_to "Delete artist", artist_path(@artist.id), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure you want to delete this artist completely?" } %>
     </div>
-    <div>
-      Insert songs here
+    <div class="col-xs-12">
+      <% @artist.songs.each do |song| %>
+      <div class="col-md-7">
+            <h4><%= song.title %></h4>
+          </div>
+          <div class="col-md-3 right">
+            <%= link_to "Delete song", song_path(song.id), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure you want to delete this song completely?" } %>
+          </div>
+      <% end %>
     </div>
   </div>
 </div>

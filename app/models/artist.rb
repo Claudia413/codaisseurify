@@ -8,4 +8,8 @@ class Artist < ApplicationRecord
     order(:name)
   end
 
+  def self.order_by_name_reverse
+    reverse_order(:name)
+  end
+
 end

@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
     @songs = current_artist.songs
@@ -9,11 +9,11 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = current_artist.song.build
+    @song = @artist.songs.build
   end
 
   def create
-    @song = current_artist.song.build(song_params)
+    @song = @artist.song.build(song_params)
 
     if @song.save
       redirect_to @song, notice: "Your song was added"

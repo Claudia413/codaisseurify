@@ -1,0 +1,38 @@
+<%= form_for @song do |f| %>
+
+<ul>
+   <% @song.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+   <% end %>
+</ul>
+
+  <div class="form-group">
+    <label>Song title</label>
+    <%= f.text_field :title, placeholder: "example: Hakuna Matata", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Release date</label>
+    <%= f.date_select :release_date, class: 'form-control' %>
+  </div>
+
+  <label>Rate this song</label>
+
+  <%= f.collection_check_boxes(:rating, Subject.all, :id, :name) do |b| %>
+    <div class="form-group">
+
+      <%= radio_button_tag(:rating, 1) %>
+      <%= label_tag(:rating1, "1 star") %>
+      <%= radio_button_tag(:rating, 2) %>
+      <%= label_tag(:rating2, "2 stars") %>
+
+    </div>
+  <% end %>
+
+
+  <label>Add this song?</label>
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>
