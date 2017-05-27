@@ -1,7 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.artist-panel-body {
+.artist-panel-body, .artist-show-col {
   display: flex;
   flex-direction: column;
+}
+
+.artist-show-col {
+align-items: center;
 }
