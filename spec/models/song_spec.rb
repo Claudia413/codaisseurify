@@ -7,7 +7,7 @@ RSpec.describe Song, type: :model do
 
     it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_presence_of(:release_date) }
-    it { is_expected.to validate_numericality_of(:rating).is_at_most(5) }
+    it { is_expected.to validate_numericality_of(:rating) }
   end
 
     describe "order songs by name in acending order" do
