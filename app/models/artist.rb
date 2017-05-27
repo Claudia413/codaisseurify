@@ -3,4 +3,8 @@ class Artist < ApplicationRecord
 
   validates :name, presence: true
   validates :rating, length: {maximum: 1}
+
+  def self.order_by_name
+    order(:name)
+  end
 end
