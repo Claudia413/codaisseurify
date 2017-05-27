@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+
+  <% @artists.each do |artist| %>
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="panel panel-primary">
+          <div class="panel-heading">
+            Artist
+          </div>
+          <div class="panel-body">
+            <div class="row artist-panel-body">
+              <img src="#"/>
+                <h4><%= artist.name %></h4>
+            </div>
+
+          </div>
+      </div>
+  </div>
+    <% end %>
+
+  </div>
+</div>
