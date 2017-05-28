@@ -1,16 +1,16 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
+  before_action :set_artist, only: [:new, :create, :update, :destroy]
 
   def new
-    @artist = Artist.find(params[:artist_id])
     @song = @artist.songs.build
   end
 
   def create
-    @song = @artist.song.build(song_params)
+    @song = @artist.songs.build(song_params)
 
     if @song.save
-      redirect_to @song, notice: "Your song was added"
+      redirect_to @artist, notice: "Your song was added"
     else
       render :new
     end
@@ -34,6 +34,10 @@ class SongsController < ApplicationController
   end
 
 private
+def set_artist
+  @artist = Artist.find(params[:artist_id])
+end
+
 def set_song
   @song = Song.find(params[:id])
 end
