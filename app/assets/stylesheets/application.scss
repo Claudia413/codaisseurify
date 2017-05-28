@@ -45,6 +45,11 @@ a {
 align-items: center;
 }
 
+.artist-actions{
+  display: flex;
+  justify-content: center;
+}
+
 .song-line {
-  margin: 5px;
+  margin-top: 5px;
 }

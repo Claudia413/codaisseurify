@@ -24,7 +24,7 @@ describe Artist, type: :model do
     let!(:artist_c) {create :artist, name:"Beyonce"}
 
     it "returns an ordered list of artists from a to z" do
-      expect(Artist.order_by_name).to match_array [artist_a, artist_c, artist_b]
+      expect(Artist.order_by_name).to eq [artist_a, artist_c, artist_b]
     end
   end
 
@@ -34,8 +34,7 @@ describe Artist, type: :model do
     let!(:artist_c) {create :artist, name:"Beyonce"}
 
     it "returns an ordered list of artists from z to a" do
-      expect(Artist.order_by_name).to match_array [artist_b, artist_c, artist_a]
+      expect(Artist.order_by_name_reverse).to eq [artist_b, artist_c, artist_a]
     end
   end
-
 end

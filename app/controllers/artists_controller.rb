@@ -2,7 +2,11 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :destroy]
 
   def index
-    @artists = Artist.all
+    if (params[:order_by]== "z to a")
+      @artists = Artist.all.order_by_name_reverse
+    else
+      @artists = Artist.all.order_by_name
+    end
   end
 
   def destroy
@@ -14,5 +18,4 @@ private
   def set_artist
     @artist = Artist.find(params[:id])
   end
-
 end

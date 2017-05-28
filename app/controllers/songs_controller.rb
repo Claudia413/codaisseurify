@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
-  before_action :set_artist, only: [:new, :create, :update, :destroy]
+  before_action :set_artist, only: [:new, :create, :update]
 
   def new
     @song = @artist.songs.build
@@ -30,20 +30,19 @@ class SongsController < ApplicationController
   def destroy
     @song = Song.find(params[:id])
     @song.destroy
-    redirect_to artist_path
+    redirect_to artist_path(params[:artist_id])
   end
 
 private
-def set_artist
-  @artist = Artist.find(params[:artist_id])
-end
+  def set_artist
+    @artist = Artist.find(params[:artist_id])
+  end
 
-def set_song
-  @song = Song.find(params[:id])
-end
+  def set_song
+    @song = Song.find(params[:id])
+  end
 
-def song_params
-  params.require(:song).permit(:title, :release_date)
-end
-
+  def song_params
+    params.require(:song).permit(:title, :release_date)
+  end
 end
