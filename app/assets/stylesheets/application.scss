@@ -1,22 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.artist-panel-body, .artist-show-col {
-  display: flex;
-  flex-direction: column;
+body {
+  background-color: #202123;
+  color: white;
 }
 
-.artist-show-col {
-align-items: center;
+h2 {
+  font-size: 40px;
+}
+
+a {
+  color: white;
 }
 
 .btn-primary {
   background-color: #19c488;
   border-color: #149e6d;
-}
-body {
-  background-color: #202123;
-  color: white;
 }
 
 .panel-primary{
@@ -33,4 +33,18 @@ body {
 
 .panel-body {
   background-color: #3f3f3f;
+}
+
+
+.artist-panel-body, .artist-show-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-show-col {
+align-items: center;
+}
+
+.song-line {
+  margin: 5px;
 }

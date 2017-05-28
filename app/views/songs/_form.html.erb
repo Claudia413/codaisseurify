@@ -1,10 +1,10 @@
 <%= form_for [@artist, @artist.songs.new] do |f| %>
 
-<ul>
-   <% @song.errors.full_messages.each do |msg| %>
-     <li><%= msg %></li>
-   <% end %>
-</ul>
+  <ul>
+     <% @song.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+  </ul>
 
   <div class="form-group">
     <label>Song title</label>
@@ -15,9 +15,6 @@
     <label>Release date</label>
     <%= f.date_select :release_date, class: 'form-control' %>
   </div>
-
-
-
 
   <label>Add this song?</label>
 
