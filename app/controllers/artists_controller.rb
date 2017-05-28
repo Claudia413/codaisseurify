@@ -1,7 +1,11 @@
 class ArtistsController < ApplicationController
-  
+
   def index
     @artists = Artist.all
+  end
+
+  def new
+    @song = @artist.songs.build
   end
 
   def show

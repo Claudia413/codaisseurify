@@ -1,14 +1,8 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @songs = current_artist.songs
-  end
-
-  def show
-  end
-
   def new
+    @artist = Artist.find(params[:artist_id])
     @song = @artist.songs.build
   end
 
