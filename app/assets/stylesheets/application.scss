@@ -31,6 +31,14 @@ a {
   }
 }
 
+.panel-default {
+  .panel-heading{
+    background-color: #19c488;
+    border-color: #149e6d;
+    color: white;
+  }
+}
+
 .panel-body {
   background-color: #3f3f3f;
 }
@@ -52,4 +60,11 @@ align-items: center;
 
 .song-line {
   margin-top: 5px;
+}
+
+.form-group {
+  color: black;
+  label {
+    color: white;
+  }
 }
