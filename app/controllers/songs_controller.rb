@@ -43,7 +43,7 @@ def set_song
 end
 
 def song_params
-  params.require(:song).permit(:title, :release_date, :rating)
+  params.require(:song).permit(:title, :release_date)
 end
 
 end
