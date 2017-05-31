@@ -3,7 +3,9 @@
     <div class="col-xs-12 text-center"><h4><%= link_to "< Back to all artists", artists_path %></h4>
     </div>
     <div class="col-xs-12 artist-image">
-      <!-- Insert image stuff here -->
+      <% @artist.photos.each do |photo| %>
+  <%= image_tag photo.image %>
+<% end %>
     </div>
   </div>
     <div class="row">

@@ -2,13 +2,22 @@
 
 Artist.destroy_all
 Song.destroy_all
+Photo.destroy_all
 
-artist1 = Artist.create(name:"Duke Ellington")
-artist2 = Artist.create(name:"Miles Davis")
-artist3 = Artist.create(name:"Nat King Cole")
-artist4 = Artist.create(name:"Oliver Nelson")
-artist5 = Artist.create(name:"Disney songs")
-artist6 = Artist.create(name:"John Coltrane")
+photo_miles = Photo.create(remote_image_url: "http://res.cloudinary.com/hedgehogs4578/image/upload/v1496215479/Miles-Davis-Freedom-Jazz-Review_jdrba6.jpg")
+photo_duke = Photo.create(remote_image_url:"http://res.cloudinary.com/hedgehogs4578/image/upload/v1496215508/318_125706311135_o5oipg.jpg")
+photo_john = Photo.create(remote_image_url: "http://res.cloudinary.com/hedgehogs4578/image/upload/v1496215540/john-coltrane-france-651_xuo33u.jpg")
+photo_nat = Photo.create(remote_image_url: "http://res.cloudinary.com/hedgehogs4578/image/upload/v1496215582/mtv.com__sdv3bq.jpg")
+photo_oliver = Photo.create(remote_image_url: "http://res.cloudinary.com/hedgehogs4578/image/upload/v1496215656/Oliver_Nelson_aoflkz.jpg")
+photo_disney = Photo.create(remote_image_url: "http://res.cloudinary.com/hedgehogs4578/image/upload/v1496215705/046a75683843701a7ea67b31af5d2a61_aztavm.jpg")
+
+
+artist1 = Artist.create(name:"Duke Ellington", photos: [photo_duke])
+artist2 = Artist.create(name:"Miles Davis", photos: [photo_miles])
+artist3 = Artist.create(name:"Nat King Cole", photos: [photo_nat])
+artist4 = Artist.create(name:"Oliver Nelson", photos: [photo_oliver])
+artist5 = Artist.create(name:"Disney songs", photos: [photo_disney])
+artist6 = Artist.create(name:"John Coltrane", photos: [photo_john])
 
 song1 = Song.create(title:"In a sentimental mood", release_date: 500.days.ago, artist: artist1)
 song2 = Song.create(title:"It never entered my mind", release_date: 900.days.ago, artist: artist2)

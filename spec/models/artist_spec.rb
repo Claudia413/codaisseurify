@@ -18,23 +18,23 @@ describe Artist, type: :model do
     end
   end
 
-  describe "order artists by name in acending order" do
+  describe "order artists by name in ascending order" do
     let!(:artist_a) {create :artist, name:"Alan"}
     let!(:artist_b) {create :artist, name:"Rihanna!"}
     let!(:artist_c) {create :artist, name:"Beyonce"}
 
     it "returns an ordered list of artists from a to z" do
-      expect(Artist.order_by_name).to eq [artist_a, artist_c, artist_b]
+      expect(Artist.order_by("Sort A-Z")).to eq [artist_a, artist_c, artist_b]
     end
   end
 
-  describe "order artists by name in decending order" do
+  describe "order artists by name in descending order" do
     let!(:artist_a) {create :artist, name:"Alan"}
     let!(:artist_b) {create :artist, name:"Rihanna!"}
     let!(:artist_c) {create :artist, name:"Beyonce"}
 
     it "returns an ordered list of artists from z to a" do
-      expect(Artist.order_by_name_reverse).to eq [artist_b, artist_c, artist_a]
+      expect(Artist.order_by("Sort Z-A")).to eq [artist_b, artist_c, artist_a]
     end
   end
 end
