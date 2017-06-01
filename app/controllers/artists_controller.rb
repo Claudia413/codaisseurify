@@ -5,6 +5,10 @@ class ArtistsController < ApplicationController
       @artists = Artist.all.order_by(params[:order_by])
   end
 
+  def show
+    @photos = @artist.photos
+  end
+
   def destroy
     @artist.destroy
     redirect_to artists_path

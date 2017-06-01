@@ -43,6 +43,10 @@ a {
   background-color: #3f3f3f;
 }
 
+.cover-image {
+  width: 250px;
+  height: 200px;
+}
 
 .artist-panel-body, .artist-show-col {
   display: flex;
@@ -60,6 +64,16 @@ align-items: center;
 
 .song-line {
   margin-top: 5px;
+}
+
+.artist-image {
+  width: 400px;
+  height: 400px;
+  overflow:hidden;
+  img{
+    max-width: 400px;
+    max-height: 400px;
+  }
 }
 
 .form-group {
