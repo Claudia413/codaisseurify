@@ -63,13 +63,13 @@ function submitSong(event) {
   updateSongCount();
 }
 
-// function DeleteAllSong(event) {
+// function deleteAllSongs(event) {
 //   event.preventDefault();
 //
-//   $.each($(".success"), function(index, tableRow) {
-//     $tableRow = $(tableRow);
-//     todoId = $(tableRow).data('id');
-//     deleteTodo(todoId);
+//   $.each($(""), function(index, songRow) {
+//     $songRow = $(songRow);
+//     songId = $(songRow).data('id');
+//     deleteSingleSong(songId);
 //   });
 // }
 
@@ -96,6 +96,6 @@ function DeleteAllSongs(event) {
 $(document).ready(function() {
   $("form").bind("submit", submitSong);
   $(".delete-this-song").bind("click", deleteSingleSong);
-  $("#delete-all-songs").bind("click", DeleteAllSongs);
+  $("#delete-all-songs").bind("click", deleteAllSongs);
   updateSongCount();
 });
