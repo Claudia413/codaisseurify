@@ -23,7 +23,7 @@ function createSong(title, release_date) {
     '<div class="col-sm-7 col-sm-offset-2 song-line">'
   ).append(song);
 
-  var row = $('<div class="row"></div>')
+  var row = $('<div class="row song-info"></div>')
     .append(newSongLine)
     .append($('<div class="col-sm-1 song-line-rating">')); //.append(label));
 
@@ -63,15 +63,24 @@ function submitSong(event) {
   updateSongCount();
 }
 
-// function deleteAllSongs(event) {
-//   event.preventDefault();
-//
-//   $.each($(""), function(index, songRow) {
-//     $songRow = $(songRow);
-//     songId = $(songRow).data('id');
-//     deleteSingleSong(songId);
-//   });
-// }
+function deleteAllSongs(event) {
+
+  $.each($(".song-info"), function(index, songRow) {
+    $songRow = $(songRow);
+    songId = $(songRow).data('id');
+    deleteSingleSong(songId);
+  });
+}
+// function deleteFromDb{}
+// $.ajax({
+//   type: "DELETE",
+//   url: "/artists/" + currentArtistId + "/songs/" + songId + ".json",
+//   contentType: "application/json",
+//   dataType: "json"
+// }).then(function(data) {
+//   $(songRow).remove();
+//   updateSongCount();
+// });
 
 function deleteSingleSong(event) {
   event.preventDefault();

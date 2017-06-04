@@ -15,7 +15,7 @@
   </div>
   <div id="songs_of_artist">
     <% @artist.songs.each do |song| %>
-    <div class="row">
+    <div class="row song-info">
       <div class="col-sm-7 col-sm-offset-2 song-line">
         <h4><%= song.title %> (<%= song.release_date %>)</h4>
       </div>
