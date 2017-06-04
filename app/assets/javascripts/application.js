@@ -64,6 +64,7 @@ function submitSong(event) {
 }
 
 function deleteAllSongs(event) {
+  event.preventDefault();
 
   $.each($(".song-info"), function(index, songRow) {
     $songRow = $(songRow);
@@ -71,16 +72,6 @@ function deleteAllSongs(event) {
     deleteSingleSong(songId);
   });
 }
-// function deleteFromDb{}
-// $.ajax({
-//   type: "DELETE",
-//   url: "/artists/" + currentArtistId + "/songs/" + songId + ".json",
-//   contentType: "application/json",
-//   dataType: "json"
-// }).then(function(data) {
-//   $(songRow).remove();
-//   updateSongCount();
-// });
 
 function deleteSingleSong(event) {
   event.preventDefault();
