@@ -41,8 +41,16 @@ class SongsController < ApplicationController
 
   def destroy
     @song = Song.find(params[:id])
-    @song.destroy
-    redirect_to artist_path(params[:artist_id])
+
+    respond_to do |format|
+        if @song.destroy
+          format.html { redirect_to artist_path(params[:artist_id]), notice: "Your song was deleted" }
+          format.json { render json: { status: "ok" } }
+        else
+          format.html { redirect_to artist_path(params[:artist_id]), notice: "Your song was not deleted, please try again" }
+          format.json { render json: @song, status: :unprocessable_entity }
+        end
+      end
   end
 
 private
