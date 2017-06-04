@@ -7,6 +7,7 @@ class ArtistsController < ApplicationController
 
   def show
     @photos = @artist.photos
+    @song = Song.new
   end
 
   def destroy

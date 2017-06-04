@@ -1,0 +1,29 @@
+<%= form_for [@artist, @artist.songs.new] do |f| %>
+
+  <div class="song-counter">
+    <p>Total number of songs: <span id="total-count">0</span></p>
+  </div>
+
+  <ul>
+    <% @song.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+
+  <div class="form-group">
+    <label>Song title</label>
+    <%= f.text_field :title, placeholder: "example: Hakuna Matata", id: "new-title", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Release date</label>
+    <%= f.date_select :release_date, id: "new-release-date", class: 'form-control' %>
+  </div>
+
+  <label>Would you like to add this song?</label>
+
+  <div class="actions">
+    <%= f.submit "Save", id: "new-save", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
