@@ -11,8 +11,8 @@ function updateSongCount() {
 }
 
 function createSong(title, release_date) {
-  updateSongCount;
-  var song = $("<h4></h4>").html(title + " (" + release_date + ")");
+  updateSongCount
+  var song = $("<h4></h4>").html(title + " (" + release_date + ")" );
   var newSong = {
     title: title,
     release_date: release_date
@@ -67,15 +67,14 @@ function deleteAllSongs(event) {
 
   $.each($(".song-info"), function() {
     var songRow = $(".song-info");
-    var songId = $(songRow).data("id");
+    var songId = $(songRow).data('id');
     $.ajax({
       type: "DELETE",
       url: "/artists/" + currentArtistId + "/songs/" + songId + ".json",
       contentType: "application/json",
       dataType: "json"
     }).then(function(data) {
-      $(songRow).remove();
-      $();
+      $("#songs_of_artist").innerhtml("");
       updateSongCount();
     });
   });
@@ -91,7 +90,7 @@ function deleteSingleSong(event) {
     contentType: "application/json",
     dataType: "json"
   }).then(function(data) {
-    $("#songs_of_artist").html("");
+    $(songRow).remove();
     updateSongCount();
   });
 }
